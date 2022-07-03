@@ -58,7 +58,7 @@ async fn main() {
     dir.pop(); dir.pop(); dir.pop();
     let mut dir_ip = dir.clone();
     dir.push("data/token");
-    dir_ip.push("data/last_ip");
+    dir_ip.push("last_ip");
     let last_ip = get_file(dir_ip.clone());
 
     if !ip.eq(last_ip.as_str()) {
