@@ -25,7 +25,7 @@ fn get_file(dir : PathBuf) -> String {
 fn get_random_message() -> String {
     let mut dir = env::current_exe().unwrap();
     dir.pop(); dir.pop(); dir.pop();
-    dir.push("replique_chat_potte");
+    dir.push("data/replique_chat_potte");
     
     let all_rep = get_file(dir);
     let repliques = all_rep.split('\n');
@@ -57,8 +57,8 @@ async fn main() {
     let mut dir = env::current_exe().unwrap();
     dir.pop(); dir.pop(); dir.pop();
     let mut dir_ip = dir.clone();
-    dir.push("token");
-    dir_ip.push("last_ip");
+    dir.push("data/token2");
+    dir_ip.push("data/last_ip2");
     let last_ip = get_file(dir_ip.clone());
 
     if !ip.eq(last_ip.as_str()) {
