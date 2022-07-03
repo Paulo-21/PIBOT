@@ -62,8 +62,9 @@ async fn main() {
     let last_ip = get_file(dir_ip.clone());
 
     if !ip.eq(last_ip.as_str()) {
-        let token = get_file(dir);
-        let message = build_message(ip.clone());
+        //let token = get_file(dir);
+        let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
+	let message = build_message(ip.clone());
         
         let client_http = Http::new(token.as_str());
         let channel_id = ChannelId(992922304185122848);
